@@ -5,7 +5,8 @@ import pandas as pd
 from snowflake.snowpark.functions import col
 import requests
 
-
+cnx=st.connection("snowflake")
+session = cnx.session()
 
 # Write directly to the app
 st.title(f":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
@@ -26,8 +27,7 @@ ingredients_list = st.multiselect(
     
 )
 
-cnx=st.connection("snowflake")
-session = cnx.session()
+
 
 pd_df = my_dataframe.to_pandas()
 st.dataframe(pd_df)
