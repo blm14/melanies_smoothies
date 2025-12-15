@@ -29,6 +29,7 @@ try:
     # Process ingredients selection
     if ingredients_list:
         ingredients_string = ' '.join(ingredients_list)  # Join selected ingredients into a single string
+        st.write('"' + ingredients_string + '"')
         for fruit_chosen in ingredients_list:
             try:
                 # Make API request to get details about each fruit
